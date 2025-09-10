@@ -7,7 +7,7 @@ public record LoginPayload
 {
     [Required]
     [MaxLength(256)]
-    public required string Login { get; init; }
+    public required string Username { get; init; }
     [Required]
     [MaxLength(256)]
     public required string Password { get; init; }
