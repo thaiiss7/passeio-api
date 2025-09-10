@@ -3,6 +3,6 @@ namespace Passeio.Services.Tour;
 public interface ITourService
 {
     string FormatBio(string bio);
-    Task<string> TagProfiles(string username);
-    Task<string> TagPlaces(string stopTitle);
+    string TagProfiles(string username);
+    string TagPlaces(string stopTitle);
 }

@@ -2,6 +2,6 @@ namespace Passeio.Data;
 
 public record EditTourData
 (
-    Guid tourId,
-    Guid stopId
+    Guid TourId,
+    Guid StopId
 );

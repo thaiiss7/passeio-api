@@ -6,16 +6,15 @@ namespace Passeio.Services.Tour;
 public class EFTourService(PasseioDbContext ctx) : ITourService
 {
     public string FormatBio(string bio)
-    {
-        return bio.Replace("  ", " "); 
-    }
+        => bio.Replace("  ", " "); 
 
-    public Task<string> TagPlaces(string stopTitle)
+
+    public string TagPlaces(string stopTitle)
     {
         throw new NotImplementedException();
     }
 
-    public Task<string> TagProfiles(string username)
+    public string TagProfiles(string username)
     {
         throw new NotImplementedException();
     }

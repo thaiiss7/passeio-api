@@ -34,8 +34,8 @@ public static class TourEndpoints
                 var userId = Guid.Parse(claim.Value);
 
                 var result = await useCase.Do(new EditTourPayload(
-                    payload.tourId,
-                    payload.stopId,
+                    payload.TourId,
+                    payload.StopId,
                     userId
                 ));
 
