@@ -1,3 +1,6 @@
 namespace Passeio.UseCases.GetTour;
 
-public record GetTourPayload;
+public record GetTourPayload
+(
+    string Title
+);

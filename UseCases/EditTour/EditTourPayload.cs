@@ -1,3 +1,7 @@
 namespace Passeio.UseCases.EditTour;
 
-public record EditTourPayload;
+public record EditTourPayload
+(
+    Guid TourId,
+    Guid StopId
+);

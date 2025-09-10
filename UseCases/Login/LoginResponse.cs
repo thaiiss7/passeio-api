@@ -1,3 +1,6 @@
 namespace Passeio.UseCases.Login;
 
-public record LoginResponse;
+public record LoginResponse
+(
+    string Token
+);

@@ -1,3 +1,6 @@
 namespace Passeio.UseCases.CreateTour;
 
-public record CreateTourResponse;
+public record CreateTourResponse
+(
+    Guid TourId
+);
