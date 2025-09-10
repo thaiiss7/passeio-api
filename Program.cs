@@ -2,8 +2,10 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Passeio.Endpoints;
 using Passeio.Models;
 using Passeio.Services.JWT;
+using Passeio.Services.Tour;
 using Passeio.UseCases.CreateTour;
 using Passeio.UseCases.EditTour;
 using Passeio.UseCases.GetTour;
@@ -18,6 +20,7 @@ builder.Services.AddDbContext<PasseioDbContext>(options =>
 });
 
 builder.Services.AddSingleton<IJWTService, JWTService>();
+builder.Services.AddTransient<ITourService, EFTourService>();
 
 builder.Services.AddTransient<CreateTourUseCase>();
 builder.Services.AddTransient<EditTourUseCase>();
@@ -43,6 +46,21 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.ConfigureAuthEndpoints();
+app.ConfigureTourEndpoints();
 
 app.Run();

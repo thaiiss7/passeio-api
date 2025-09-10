@@ -45,7 +45,8 @@ public static class TourEndpoints
                     (false, _) => Results.BadRequest(),
                     (true, _) => Results.Ok(result.Data)
                 };
-            });
+                
+            }).RequireAuthorization();
 
         //mapget - ver tour
         app.MapGet("tour/{title}", async (
